@@ -1,0 +1,30 @@
+{
+	"123456789012345678": {
+		"whitelist": [
+			"<@![^ ]+>",
+			"^\\d+$",
+			"```"
+		],
+		"blacklist": [
+			{
+				"description":"repetitive letters",
+				"action":"dr",
+				"delay":0,
+				"regex":"(.)\\1{4,}"
+			},
+			{
+				"description":"single word",
+				"action":"d",
+				"delay":120,
+				"regex":"^[\\w\\.\\*|\\-\\:\\\"\\']+$"
+			},
+			{
+				"description":"ALL CAPS!!!",
+				"action":"dmr",
+				"delay":120,
+				"regex":" *[^.<>@]+[A-Z!]{5,}"
+			}
+		],
+		"muterole_id": 987654321098765432
+	}
+}
