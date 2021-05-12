@@ -2,26 +2,16 @@ from data.bot_globals import command_prefix
 
 help_message = f"""
 ```fix
-RegexFilter, a regex filter bot
+RegexFilterBot help
 ```
 My command prefix is `{command_prefix}`
-
-**Normal commands**
-```json
+```js
+// Normal commands
 "p"        make me ping you
 "help|h"   display help
-"f"        give a feedback message
-```
-**Admin commands**
-```json
+
+// Admin commands
 "r"        update regex filter from file
 "rl"       upload regex filter
-
-"m"        update memlog file
-"ml"       upload memlog file
-
-"e"        echo a message
-"lc"       clean log files
-"dl"       upload dump file
 ```
 """

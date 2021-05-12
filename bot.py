@@ -1,5 +1,4 @@
 import discord
-
 import asyncio
 
 from src.regex import regexFilter, updateRe
@@ -57,29 +56,30 @@ async def on_message(message):
     message_string = message.content[len(command_prefix):]
 
     if message_string in {"hello", "hi", "ping", "p"}:
-        print("p")
+        print("initiated p")
         # not an embed, we want the user to get pinged!
         await message.channel.send(f"{message.author.mention}")
         return
 
     elif message_string in {"help", "h"}:
-        print("h")
-        await message.channel.send(embed=discord.Embed(description=help_message, color=0x000000))
+        print("initiated h")
+        await message.channel.send(embed=discord.Embed(description=help_message))
         return
     
     elif ((message_string in {"regex", "r"}) and (message.author.id in admin_ids)):
-        print("r")
+        print("initiated r")
         updateRe()
+        await message.channel.send(embed=discord.Embed(description="done r"))
         return
     
     elif ((message_string in {"regexlist", "rl"}) and (message.author.id in admin_ids)):
-        print("rl")
+        print("initiated rl")
         await message.channel.send(file=discord.File("data/regex_filter.json"))
         return
     
     else:
-        await message.channel.send(f"cant recognize or execute command `{message_string}`")
-        print(f"cant recognize or execute command {message_string}")
+        await message.channel.send(embed=discord.Embed(description=f"cant recognize or execute command {message_string[:10]}"))
+        print(f"cant recognize or execute command {message_string[:10]}")
         return
 
 
