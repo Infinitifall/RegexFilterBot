@@ -77,5 +77,5 @@ Update the global variable regex_filter by reading in data from the regex_filter
 """
 def updateRe():
     global regex_filter
-    with open("data/regex_filter.json") as f:
+    with open("data/regex_filter.json", "r") as f:
         regex_filter = json.load(f)
