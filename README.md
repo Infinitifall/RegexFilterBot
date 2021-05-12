@@ -47,6 +47,12 @@ Use cases:
         - `bot_token` with your bot’s secret token (string)
         - `my_guild_ids` with ids of all guilds you want the bot to operate on (set of ints)
         - `admin_ids` with ids of all users you want to give access to admin commands (set of ints)
+    
+    6. Finally, you dont want to accidentally git push sensitive data! ([*what is this?*](https://git-scm.com/docs/git-update-index#Documentation/git-update-index.txt---no-skip-worktree))
+        ```
+        git update-index --skip-worktree data/bot_globals.py
+        git update-index --skip-worktree data/regex_filter.json
+        ```
 
 ## The regex "filter"
 
@@ -74,7 +80,7 @@ An example dummy "filter" has been set up in [regex_filter.json](data/regex_filt
 			},
 			{
 				"description":"ALL CAPS!!!",
-				"action":"dr",
+				"action":"drm",
 				"delay":120,
 				"regex":" *[^.<>@]+[A-Z!]{5,}"
 			}
@@ -84,7 +90,7 @@ An example dummy "filter" has been set up in [regex_filter.json](data/regex_filt
 }
 ```
 
-Each guild's "filter" is stored as a key-value pair, where the key is the guild's id. The "filter" consists of:
+Each guild's "filter" is stored as a key-value pair, where the key is the guild's id and the value is the "filter" which contains:
 - `"whitelist"`: the whitelist filter, a list of regular expressions.
 - `"blacklist"`: the blacklist filter, a list of objects that each contain:
   - `"regex"`: a regular expression
