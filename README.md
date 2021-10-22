@@ -1,5 +1,7 @@
 # RegexFilterBot
 
+***Update: [discord.py is no longer maintained](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1), this repository has been archived.***
+
 A [discord.py](https://github.com/Rapptz/discord.py) bot that provides a message "filter" defined by regular expressions. Supports running on multiple guilds/servers, each with their own unique "filter".
 
 A "filter" can be set to make the bot do any of:
