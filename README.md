@@ -33,7 +33,7 @@ Use cases:
 
     2. Clone this repository
         ```
-        git clone git@github.com:Infinitifall/RegexFilterBot.git
+        git clone https://github.com/Infinitifall/RegexFilterBot.git
         cd RegexFilterBot
         ```
     
